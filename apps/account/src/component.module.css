@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 24vw;
+    height: 12vw;
+}
+
+.input {
+    flex: 1;
+    margin: 0 3vw;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.textbox {
+
+}
+
+.button {
+    
+}

@@ -1,0 +1,15 @@
+{
+  "extends": "ts-config-single-spa",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    // enable d.ts output
+    "declaration": true, 
+    "declarationMap": true,
+    "declarationDir": "./dist",
+    "rootDir": "./src",
+
+    // enable source maps
+    "sourceMap": true,
+    "inlineSources": true
+  }
+}

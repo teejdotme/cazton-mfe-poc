@@ -1,0 +1,14 @@
+{
+    "extends": "ts-config-single-spa",
+    "include": ["src/**/*"],
+    "compilerOptions": {
+      "jsx": "react",
+      "baseUrl": ".",
+      "paths": {
+        "@poc-mfe/globals": [
+          "../../globals/dist/index"
+        ]
+      },
+      "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    }
+  }

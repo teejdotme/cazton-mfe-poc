@@ -1,0 +1,22 @@
+{
+  "name": "@poc-mfe/global",
+  "version": "0.0.1",
+  "scripts": {
+    "build": "yarn clean && yarn rollup -c rollup.config.js",
+    "watch": "yarn clean && yarn rollup -c rollup.config.js --watch",
+    "serve": "yarn http-server dist --cors --port 9005",
+    "clean": "rm -Rf dist"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^15.1.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@rollup/plugin-typescript": "^6.0.0",
+    "http-server": "^0.12.3",
+    "rollup": "^2.29.0",
+    "systemjs": "^6.7.0",
+    "ts-config-single-spa": "^1.9.0",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.3"
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>POC</title>
+  <meta name="importmap-type" content="systemjs-importmap" />
+  <script type="systemjs-importmap" src="/importmap.json"></script>
+  <script src="https://cdn.jsdelivr.net/npm/import-map-overrides/dist/import-map-overrides.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/system.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-register.min.js"></script>
+  <link rel="stylesheet" href="/index.css">
+</head>
+<body>
+  <template id="single-spa-layout">
+    <single-spa-router>
+      <div id="viewport">
+        <nav class="app">
+          <application name="@poc-mfe/navbar"></application>
+        </nav>
+        <div class="app grow">
+          <route default>
+            <application name="@poc-mfe/home"></application>
+          </route>
+          <route path="account">
+            <application name="@poc-mfe/account"></application>
+          </route>
+          <route path="search">
+            <application name="@poc-mfe/search"></application>
+          </route>
+        </div>
+      </div>
+    </single-spa-router>
+  </template>
+  <script>
+    /* NOTE! This explicit and serial load order is only required because of
+       NOTE! a race condition in either react-router, react-router-dom, or both.
+       NOTE! Most of the time, there is no issue loading them in parallel.  However,
+       NOTE! occasionally one of the two scripts will throw a cryptic error and fail
+       NOTE! to load. The solution below may be overkill, but seems to prevent the error.
+    */
+   
+    System
+      .import("react")
+      .then(function() {
+        return System.import("react-dom");
+      })
+      .then(function() {
+        return System.import("react-router");
+      })
+      .then(function() {
+        return System.import("react-router-dom");
+      })
+      .then(function() {
+        return System.import("/index.js");
+      });
+  </script>
+  <import-map-overrides-full show-when-local-storage="devtools" dev-libs></import-map-overrides-full>
+</body>
+</html>
