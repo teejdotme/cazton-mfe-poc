@@ -80,7 +80,11 @@ System.register(['react', 'react-dom', '@poc-mfe/globals'], function (exports) {
                     return _super !== null && _super.apply(this, arguments) || this;
                 }
                 Root.prototype.render = function () {
-                    return (React.createElement("div", { className: styles.text }, "You found the home page!"));
+                    return (React.createElement("div", { className: styles.text },
+                        React.createElement("ul", null,
+                            React.createElement("li", null, "You found the home page!"),
+                            React.createElement("li", null, "Try logging in by clicking \"My Account\" in the top right (any user/pass will work)."),
+                            React.createElement("li", null, "Type a search term in the search box above and hit enter to see the search."))));
                 };
                 Root.prototype.componentDidCatch = function () {
                 };
