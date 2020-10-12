@@ -3,8 +3,6 @@ import styles from "./component.module.css";
 
 import globals from "@poc-mfe/globals";
 
-let _user = globals.state.auth.user();
-
 class Login extends React.Component<{}, {user: string}> {
   constructor(props: {}) {
     super(props);
@@ -67,7 +65,7 @@ class Root extends React.Component<{}, {user: string | null}> {
     super(props);
 
     this.state = {
-      user: _user
+      user: globals.state.auth.user()
     };
 
     this.onSignIn = this.onSignIn.bind(this);

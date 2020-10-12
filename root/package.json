@@ -2,7 +2,7 @@
   "name": "poc-mfe",
   "version": "0.0.1",
   "scripts": {
-    "build": "yarn clean && yarn webpack",
+    "build": "yarn clean && yarn webpack --mode=development",
     "serve": "yarn webpack-dev-server --port 9000",
     "clean": "rm -Rf dist"
   },

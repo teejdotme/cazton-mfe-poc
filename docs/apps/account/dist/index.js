@@ -73,7 +73,6 @@ System.register(['react', 'react-dom', '@poc-mfe/globals'], function (exports) {
             var styles = {"container":"component-module_container__2Xi2T","form":"component-module_form__1Fegx","input":"component-module_input__3tZl4","textbox":"component-module_textbox__1jqSJ","button":"component-module_button__1tCdz"};
             styleInject(css_248z);
 
-            var _user = globals.state.auth.user();
             var Login = /** @class */ (function (_super) {
                 __extends(Login, _super);
                 function Login(props) {
@@ -122,7 +121,7 @@ System.register(['react', 'react-dom', '@poc-mfe/globals'], function (exports) {
                 function Root(props) {
                     var _this = _super.call(this, props) || this;
                     _this.state = {
-                        user: _user
+                        user: globals.state.auth.user()
                     };
                     _this.onSignIn = _this.onSignIn.bind(_this);
                     _this.onSignOut = _this.onSignOut.bind(_this);
